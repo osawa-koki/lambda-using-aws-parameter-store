@@ -35,7 +35,6 @@ export const lambdaHandler: APIGatewayProxyHandler = async (event: APIGatewayEve
       message: 'hello world❤️',
       event,
       context,
-      environment_variables: process.env,
       keyValueSet
     })
   }
