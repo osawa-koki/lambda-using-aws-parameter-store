@@ -19,7 +19,7 @@ Resources:
     Properties:
       RoleName: !Sub ${AWS::StackName}-lambda-role
       AssumeRolePolicyDocument:
-        Version: 2012-10-17
+        Version: "2012-10-17"
         Statement:
           - Effect: Allow
             Principal:
@@ -30,7 +30,7 @@ Resources:
       Policies:
         - PolicyName: !Sub ${AWS::StackName}-lambda-policy
           PolicyDocument:
-            Version: 2012-10-17
+            Version: "2012-10-17"
             Statement:
               - Effect: Allow
                 Action:
