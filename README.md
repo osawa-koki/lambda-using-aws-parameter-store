@@ -2,6 +2,9 @@
 
 🛎🛎🛎 Lambdaで`AWS Systems ManagerのParameter Store`を使うサンプルです！  
 
+[![ci](https://github.com/osawa-koki/lambda-using-aws-parameter-store/actions/workflows/ci.yml/badge.svg)](https://github.com/osawa-koki/lambda-using-aws-parameter-store/actions/workflows/ci.yml)
+[![cd](https://github.com/osawa-koki/lambda-using-aws-parameter-store/actions/workflows/cd.yml/badge.svg)](https://github.com/osawa-koki/lambda-using-aws-parameter-store/actions/workflows/cd.yml)
+
 ## 環境構築
 
 最初にAWS CLIをインストールします。  
