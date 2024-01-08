@@ -20,6 +20,8 @@ Resources:
       FunctionName: !Sub ${AWS::StackName}-lambda-function
       Description: A Lambda function that uses AWS Parameter Store.
       PackageType: Image
+      ImageConfig:
+        Command: [ "app.lambdaHandler" ]
       Architectures:
         - x86_64
       Events:
