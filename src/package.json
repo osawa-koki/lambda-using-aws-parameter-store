@@ -18,7 +18,9 @@
   },
   "dependencies": {
     "@types/aws-lambda": "^8.10.131",
+    "@types/node": "^20.10.7",
     "aws-lambda": "^1.0.7",
+    "aws-sdk": "^2.1531.0",
     "axios": ">=0.21.1",
     "typescript": "*"
   },
