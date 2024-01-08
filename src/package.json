@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "mocha tests/unit/"
+    "test": "mocha ./tests/unit/"
   },
   "dependencies": {
     "axios": ">=0.21.1",
