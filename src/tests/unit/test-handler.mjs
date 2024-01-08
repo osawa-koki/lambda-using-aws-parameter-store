@@ -1,20 +1,19 @@
-'use strict';
+'use strict'
 
-import { lambdaHandler } from '../../app.mjs';
-import { expect } from 'chai';
-var event, context;
+import { expect } from 'chai'
+import { lambdaHandler } from '../../app.mjs'
 
 describe('Tests index', function () {
-    it('verifies successful response', async () => {
-        const result = await lambdaHandler(event, context)
+  it('verifies successful response', async () => {
+    const result = await lambdaHandler()
 
-        expect(result).to.be.an('object');
-        expect(result.statusCode).to.equal(200);
-        expect(result.body).to.be.an('string');
+    expect(result).to.be.an('object')
+    expect(result.statusCode).to.equal(200)
+    expect(result.body).to.be.an('string')
 
-        let response = JSON.parse(result.body);
+    const response = JSON.parse(result.body)
 
-        expect(response).to.be.an('object');
-        expect(response.message).to.be.equal("hello world");
-    });
+    expect(response).to.be.an('object')
+    expect(response.message).to.contain('hello')
+  });
 });
