@@ -11,7 +11,10 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "mocha ./tests/unit/"
+    "test": "mocha ./tests/unit/",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@types/aws-lambda": "^8.10.131",
