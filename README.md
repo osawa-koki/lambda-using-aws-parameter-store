@@ -52,8 +52,6 @@ sam build --use-container
 sam local start-api
 ```
 
-<http://localhost:3000/api/hello>にリクエストを投げて、`hello world`が返ってくればOKです。  
-
 ## 本番環境の準備
 
 ### GitHub Secretsの設定
@@ -64,6 +62,26 @@ sam local start-api
 | AWS_ACCESS_KEY_ID | AWSのアクセスキーID |
 | AWS_SECRET_ACCESS_KEY | AWSのシークレットアクセスキー |
 | AWS_REGION | リージョン名 |
+
+`v-*`形式のタグをつけたコミットをプッシュすると、本番環境にデプロイされます。  
+また、以下のコマンドを実行して手動でデプロイすることもできます。  
+
+```shell
+sam build --use-container
+sam deploy --stack-name <スタック名>
+```
+
+以下のコマンドでエンドポイントを確認できます。  
+
+```shell
+aws cloudformation describe-stacks --stack-name <スタック名> --query 'Stacks[].Outputs[?OutputKey==`LambdaFunctionEndpoint`].OutputValue' --output text
+```
+
+パラメータストアに`/スタック名/<KEY>`という形式のデータを保存し、当該エンドポイントに`keys`パラメータを付与すると、パラメータストアから値を取得して返却します。  
+`/スタック名/<KEY>`という形式のデータが存在しない場合は、`null`を返却します。  
+
+値が存在しない場合は、エラーとなります。  
+適宜、エラーハンドリングを追加してください。  
 
 ## 環境情報
 
