@@ -34,5 +34,7 @@ jobs:
       run: yarn lint
     - name: Type check
       run: yarn type-check
+    - name: Build
+      run: yarn build
     - name: Test
       run: yarn test
